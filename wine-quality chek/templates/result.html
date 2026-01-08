@@ -1,0 +1,125 @@
+
+<html>
+<head>
+<title>Two Input Form</title>
+<link rel="stylesheet" href="static/result.css">
+
+</head>
+<body>
+ <div class="back">
+   <a href="{{ url_for('index') }}" title="Go Back to Wine Page">
+    <img width="30" height="30"
+         src="https://img.icons8.com/ios-filled/50/FFFFFF/circled-left-2.png"
+         alt="Back Icon"
+         style="cursor:pointer;" />
+</a>
+</div>
+
+
+
+{% if Barrol_No %}
+<div class="container">
+  <h2>Wine Details</h2>
+
+  <form action="/add" method="POST">
+ 
+    <!-- Top inputs: Barrol No & Date -->
+    <ul>
+      <li>Barrol No: {{ Barrol_No }} <input type="hidden" name="Barrol_No" value="{{ Barrol_No }}"></li>
+      <li>Date: {{ Date }} <input type="hidden" name="Date" value="{{ Date }}"></li>
+    </ul>
+
+    <!-- Other inputs in two columns -->
+    <div class="form-grid">
+      <div>Fixed Acidity: {{ fixed_acidity }} <input type="hidden" name="fixed_acidity" value="{{ fixed_acidity }}"></div>
+      <div>Volatile Acidity: {{ volatile_acidity }} <input type="hidden" name="volatile_acidity" value="{{ volatile_acidity }}"></div>
+      <div>Citric Acid: {{ citric_acid }} <input type="hidden" name="citric_acid" value="{{ citric_acid }}"></div>
+      <div>Residual Sugar: {{ residual_sugar }} <input type="hidden" name="residual_sugar" value="{{ residual_sugar }}"></div>
+      <div>Chlorides: {{ chlorides }} <input type="hidden" name="chlorides" value="{{ chlorides }}"></div>
+      <div>Free Sulfur Dioxide: {{ free_sulfur_dioxide }} <input type="hidden" name="free_sulfur_dioxide" value="{{ free_sulfur_dioxide }}"></div>
+      <div>Total Sulfur Dioxide: {{ total_sulfur_dioxide }} <input type="hidden" name="total_sulfur_dioxide" value="{{ total_sulfur_dioxide }}"></div>
+      <div>Density: {{ density }} <input type="hidden" name="density" value="{{ density }}"></div>
+      <div>pH: {{ ph }} <input type="hidden" name="ph" value="{{ ph }}"></div>
+      <div>Sulphates: {{ sulphates }} <input type="hidden" name="sulphates" value="{{ sulphates }}"></div>
+      <div>Alcohol: {{ alcohol }} <input type="hidden" name="alcohol" value="{{ alcohol }}"></div>
+    </div>
+
+    <!-- Result at the bottom -->
+    <ul>
+      <li class="result-text">Result: {{ result }} <input type="hidden" name="result" value="{{ result }}"></li>
+    </ul>
+
+    <button type="submit">Save</button>
+    {% endif %}
+  </form>
+</div>
+
+<a href="/download_pdf">
+    <button id="pdfDownloadBtn" class="pdf-btn">Download PDF</button>
+</a>
+
+
+<br>
+<h2>All Wine Records</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Barrol No</th>
+        <th>Date</th>
+        <th>Fixed Acidity</th>
+        <th>Volatile Acidity</th>
+        <th>Citric Acid</th>
+        <th>Residual Sugar</th>
+        <th>Chlorides</th>
+        <th>Free Sulfur Dioxide</th>
+        <th>Total Sulfur Dioxide</th>
+        <th>Density</th>
+        <th>pH</th>
+        <th>Sulphates</th>
+        <th>Alcohol</th>
+        <th>Result</th>
+        <th>Actions</th>
+    </tr>
+    {% for row in records %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+        <td>{{ row[6] }}</td>
+        <td>{{ row[7] }}</td>
+        <td>{{ row[8] }}</td>
+        <td>{{ row[9] }}</td>
+        <td>{{ row[10] }}</td>
+        <td>{{ row[11] }}</td>
+        <td>{{ row[12] }}</td>
+        <td>{{ row[13] }}</td>
+        <td>{{ row[14] }}</td>
+        <td>
+        <div class="de_bu">
+    <a href="/delete/{{ row[0] }}" onclick="return confirmDelete();">Delete</a>
+    </div>
+</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+</div>
+
+<script>
+function confirmDelete() {
+    return confirm("Are you sure you want to delete this record?");
+}
+</script>
+
+
+
+  </body>
+</html>

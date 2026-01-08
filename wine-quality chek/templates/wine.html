@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Quality Input Form</title>
+    <link rel="stylesheet" href="static/wine.css">
+
+
+</head>
+<body>
+    <div class="form-container">
+  <h2>Wine Quality Prediction Form</h2>
+
+  <form action="http://127.0.0.1:5000/getresults" method="post">
+
+    <div class="form-segment">
+      <div class="segment">
+        <label>Barrol No:</label>
+        <input type="text" step="any" name="Barrol_No" required>
+
+        <label>Date:</label>
+        <input type="Date" step="any" name="Date" required>
+
+        <label>Fixed Acidity:</label>
+        <input type="number" step="any" name="fixed_acidity" required>
+
+        <label>Volatile Acidity:</label>
+        <input type="number" step="any" name="volatile_acidity" required>
+
+        <label>Citric Acid:</label>
+        <input type="number" step="any" name="citric_acid" required>
+
+        <label>Residual Sugar:</label>
+        <input type="number" step="any" name="residual_sugar" required>
+
+        <label>Chlorides:</label>
+        <input type="number" step="any" name="chlorides" required>
+      </div>
+
+      <div class="segment">
+        <label>Free Sulfur Dioxide:</label>
+        <input type="number" step="any" name="free_sulfur_dioxide" required>
+
+        <label>Total Sulfur Dioxide:</label>
+        <input type="number" step="any" name="total_sulfur_dioxide" required>
+
+        <label>Density:</label>
+        <input type="number" step="any" name="density" required>
+
+        <label>pH:</label>
+        <input type="number" step="any" name="pH" required>
+
+        <label>Sulphates:</label>
+        <input type="number" step="any" name="sulphates" required>
+
+        <label>Alcohol:</label>
+        <input type="number" step="any" name="alcohol" required>
+      </div>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+  <br>
+    <a href="{{ url_for('read') }}">View All Wine Records</a>
+
+</a>
+</div>
+
+
+</body>
+</html>

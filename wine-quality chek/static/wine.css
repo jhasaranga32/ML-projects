@@ -1,0 +1,124 @@
+/* Reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Page center */
+body{
+  min-height: 100vh;
+  display: flex;
+ 
+  align-items: center;
+  background: url("/static/images/background.jpg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-color: #000;
+
+  
+}
+
+/* FORM CARD */
+.form-container{
+  width: 50%;              /* 50% form size */
+  max-width: 650px;        /* avoids becoming too big */
+  padding: 25px 30px;
+  margin-left: 10%;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* Title */
+h2{
+  text-align: center;
+  margin-bottom: 12px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Two-column layout */
+.form-segment{
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 2 lines/columns */
+  gap: 18px 25px;                    /* row / column gap */
+}
+
+/* Label */
+label{
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+ 
+}
+
+/* Input boxes */
+input{
+  width: 100%;
+  padding: 7px 9px;      /* smaller height */
+  font-size: 13px;
+color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid rgba(243, 235, 235, 0.2);
+margin-top: 5px;
+  background: rgba(29, 28, 28, 0.6);
+  outline: none;
+}
+
+/* Focus */
+input:focus{
+  border: 1px solid #fe9e0e;
+  box-shadow: 0 0 8px rgba(235, 103, 9, 0.5);
+}
+
+/* BUTTON GROUP CENTER */
+button{
+  margin-top: 20px;
+  display: block;
+  width: 200px;           /* reduced size */
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover{
+  transform: translateY(-2px);
+  background: #ea0909;
+}
+
+/* View Records Button */
+a{
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+width: 200px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #4e73df;
+  color:white;
+  text-decoration:none;
+  font-size: 13px;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+a:hover{
+  background:#081a52;
+}

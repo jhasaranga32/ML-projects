@@ -1,0 +1,206 @@
+/* Reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Page background */
+body{
+  min-height: 100vh;
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  color: white;
+  padding: 30px;
+}
+
+/* Back button top-left */
+.back{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 10;
+}
+
+.back img{
+  filter: drop-shadow(0 0 5px #000);
+}
+
+/* Result card */
+.container{
+  width: 75%;
+  margin: 0 auto;
+  padding: 25px;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 20px 45px rgba(0,0,0,.4);
+}
+
+/* Heading */
+.container h2{
+  text-align:center;
+  margin-bottom: 12px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Barrel & date list */
+ul{
+  list-style:none;
+  margin-top: 10px;
+}
+
+ul li{
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* Two column layout */
+.form-grid{
+  margin-top: 10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px 20px;
+}
+
+.form-grid div{
+  padding:8px 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius:10px;
+  font-size: 13px;
+}
+
+/* Result text highlight */
+.result-text{
+  width:180px;
+  margin-top:10px;
+  padding:8px 10px;
+  background:rgba(106, 92, 232, 0.644);
+  border-radius:10px;
+  font-weight:bold;
+  align-items: center;
+}
+
+/* Save button */
+button{
+  margin-top: 12px;
+  display:block;
+  width:180px;
+  padding:10px;
+
+  border:none;
+  border-radius:10px;
+
+  background:#22c55e;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+  
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 15px 25px rgba(0,0,0,.35);
+  background:#e00707
+}
+
+/* ---- TABLE STYLE ---- */
+
+h2{
+  text-align:center;
+  margin-top:25px;
+}
+
+table{
+  width:100%;
+  margin-top:15px;
+  border-collapse:collapse;
+  background:rgba(255,255,255,.1);
+  backdrop-filter: blur(10px);
+  border-radius:12px;
+  overflow:hidden;
+}
+
+th,td{
+  padding:8px 10px;
+  text-align:center;
+  font-size:12px;
+}
+
+th{
+  background:rgba(255,255,255,.2);
+}
+
+tr:nth-child(even){
+  background:rgba(255,255,255,.05);
+
+}
+
+tr:hover {
+  background: rgba(26, 78, 2, 0.521);
+}
+
+/* delete button */
+.de_bu a{
+  padding:6px 10px;
+  color:white;
+  background:#ef4444;
+  border-radius:8px;
+  text-decoration: none;
+  font-size:12px;
+}
+
+.de_bu a:hover{
+  background:#7f1d1d;
+}
+
+.pdf-btn {
+  margin-top: 2%;
+  background-color: #049709;
+  color: white;
+  border: none;
+  
+  padding: 10px 11px;
+  font-size: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.pdf-btn:hover {
+  background-color: #9d2017;
+  
+}
+
+/* Optional: center button */
+.button-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+a.pdf-btn{
+  text-decoration: none;
+}
+
+/* Responsive mobile view */
+@media(max-width:800px){
+  .container{
+    width:95%;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  table{
+    font-size:10px;
+  }
+}
