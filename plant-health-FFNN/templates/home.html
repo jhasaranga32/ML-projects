@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Health Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Plant Health Input</h2>
+
+    <form action="/predict" method="POST">
+
+        <label>Plant ID</label>
+        <input type="text" name="plant_id" required>
+
+        <label>Soil Moisture (%)</label>
+        <input type="number" step="any" name="soil_moisture" required>
+
+        <label>Ambient Temperature (°C)</label>
+        <input type="number" step="any" name="ambient_temperature" required>
+
+        <label>Soil Temperature (°C)</label>
+        <input type="number" step="any" name="soil_temperature" required>
+
+        <label>Humidity (%)</label>
+        <input type="number" step="any" name="humidity" required>
+
+        <label>Light Intensity (Lux)</label>
+        <input type="number" step="any" name="light_intensity" required>
+
+        <label>Soil pH</label>
+        <input type="number" step="any" name="soil_ph" required>
+
+        <label>Nitrogen Level</label>
+        <input type="number" step="any" name="nitrogen_level" required>
+
+        <label>Phosphorus Level</label>
+        <input type="number" step="any" name="phosphorus_level" required>
+
+        <label>Potassium Level</label>
+        <input type="number" step="any" name="potassium_level" required>
+
+        <label>Chlorophyll Content</label>
+        <input type="number" step="any" name="chlorophyll_content" required>
+
+        <label>Electrochemical Signal</label>
+        <input type="number" step="any" name="electrochemical_signal" required>
+
+        <button type="submit">Predict Plant Health</button>
+    </form>
+</div>
+
+</body>
+</html>
