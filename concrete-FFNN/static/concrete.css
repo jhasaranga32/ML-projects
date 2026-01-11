@@ -1,0 +1,21 @@
+   body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 400px;
+            margin: 20px auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 8px;
+            width: 100%;
+        }

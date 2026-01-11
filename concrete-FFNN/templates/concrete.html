@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Concrete Strength Input</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='concrete.css') }}">
+
+
+</head>
+<body>
+
+<form action="/predict" method="post">
+    <label>Cement</label>
+    <input type="number" step="any" name="cement" required>
+
+    <label>Blast Furnace Slag</label>
+    <input type="number" step="any" name="blast_furnace_slag" required>
+
+    <label>Fly Ash</label>
+    <input type="number" step="any" name="fly_ash" required>
+
+    <label>Water</label>
+    <input type="number" step="any" name="water" required>
+
+    <label>Superplasticizer</label>
+    <input type="number" step="any" name="superplasticizer" required>
+
+    <label>Coarse Aggregate</label>
+    <input type="number" step="any" name="coarse_aggregate" required>
+
+    <label>Fine Aggregate</label>
+    <input type="number" step="any" name="fine_aggregate" required>
+
+    <label>Age (days)</label>
+    <input type="number" step="any" name="age" required>
+
+    <button type="submit">Predict</button>
+</form>
+
+
+{% if prediction_text %}
+    <h3>{{ prediction_text }}</h3>
+{% endif %}
+
+</body>
+</html>
